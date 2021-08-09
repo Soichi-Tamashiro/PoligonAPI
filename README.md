@@ -45,8 +45,10 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
 
     ![imagen](https://user-images.githubusercontent.com/38510593/116279164-d6ead780-a74c-11eb-9993-c835c2370c99.png)
 
-  - <b><a id="Polygon-list">Listar todos los Polígonos (GET)</a></b>
+  - <b><a id="Polygon-list">Listar Polígonos (GET)</a></b>
     [(back)](#Polygon-urls-end)
+
+    Listar todos los Polígonos
 
     <b>JSON Code</b>
 
@@ -59,8 +61,10 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
 
     ![imagen](https://user-images.githubusercontent.com/38510593/116279439-26c99e80-a74d-11eb-84ad-e92e14f786c4.png)
 
-  - <b><a id="Polygon-find">Buscar Polígono con ID (POST)</a></b>
+  - <b><a id="Polygon-find">Encontrar Polígono (POST)</a></b>
     [(back)](#Polygon-urls-end)
+
+    Buscar Polígono con ID
 
     <b>JSON Code</b>
 
@@ -74,8 +78,10 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
 
     ![imagen](https://user-images.githubusercontent.com/38510593/116279644-65f7ef80-a74d-11eb-8f06-65ba3f363897.png)
 
-  - <b><a id="Polygon-verify">Verificar punto dentro del Polígono (POST)</a></b>
+  - <b><a id="Polygon-verify">Verificar Punto (POST)</a></b>
     [(back)](#Polygon-urls-end)
+
+    Verificar punto dentro del Polígono
 
     <b>JSON Code</b>
 
