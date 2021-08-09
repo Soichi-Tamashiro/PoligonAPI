@@ -76,11 +76,12 @@ class List_polygon(APIView):
             myPolygon = allPolygons[ii].id
             number_points = allPolygons[ii].number_points
             myPoints = Points.objects.filter(poligon_id=myPolygon)
+            point_array = []
             if len(myPoints) > 0:
                 for i in range(number_points):
                     point_array.append([myPoints[i].point_x, myPoints[i].point_y])
             else:
-                point_array = []
+                pass
             diccionario = {
                 "id": myPolygon,
                 "distance": allPolygons[ii].distance,
@@ -101,18 +102,21 @@ class Find_polygon(APIView):
 
     def post(self, request, *args, **kwargs):
         id = request.data.get("id")
-        myPolygon = Poligon.objects.get(id=id)
-        number_points = myPolygon.number_points
-        myPoints = Points.objects.filter(poligon_id=id)
-        point_array = []
-        for i in range(number_points):
-            point_array.append([myPoints[i].point_x, myPoints[i].point_y])
+        try:
+            myPolygon = Poligon.objects.get(id=id)
+            number_points = myPolygon.number_points
+            myPoints = Points.objects.filter(poligon_id=id)
+            point_array = []
+            for i in range(number_points):
+                point_array.append([myPoints[i].point_x, myPoints[i].point_y])
 
-        diccionario = {
-            "id": id,
-            "distance": myPolygon.distance,
-            "Points": point_array,
-        }
+            diccionario = {
+                "id": id,
+                "distance": myPolygon.distance,
+                "Points": point_array,
+            }
+        except:
+            diccionario = "There is no Polygin with the id"
         return Response(diccionario)
 
 
