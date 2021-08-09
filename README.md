@@ -20,7 +20,7 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
 
 ## [Despliegue](#Contents)
 
-Luego de inicar la instancia en EC2 y conectarnos por medio de ssh
+Luego de inicar la instancia Amazon Linux 2 en EC2 y conectarnos por medio de ssh
 
 ## [Requerimientos](#Contents)
 
