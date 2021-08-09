@@ -123,6 +123,8 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
 
 - <b>Paso 2 agregar una regla inbound para el puerto 8000</b>
 
+  ![image](https://user-images.githubusercontent.com/26827763/128682834-d45afdd5-b600-4f0d-8f30-c33b600355bd.png)
+
 - <b>Paso 1 Actualizar ALLOWED_HOST en settings.py</b>
 
   ```
