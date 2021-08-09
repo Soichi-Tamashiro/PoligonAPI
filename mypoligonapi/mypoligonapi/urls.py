@@ -28,4 +28,5 @@ urlpatterns = [
     path("polygon/create/", Create_polygon.as_view()),
     path("polygon/find/", Find_polygon.as_view()),
     path("polygon/list/", List_polygon.as_view()),
+    path("polygon/verify/", Verify_point.as_view()),
 ]

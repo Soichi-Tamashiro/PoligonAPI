@@ -8,10 +8,8 @@ from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from mypoligon.models import *
 
-# from .serializers import *
 from rest_framework.permissions import IsAuthenticated
 
-# Create your views here.
 # Create Polygon points from number of Points Function
 def create_polygon_n(puntos_n):
     from shapely.geometry import Point
@@ -22,10 +20,6 @@ def create_polygon_n(puntos_n):
     center = [0, 0]
     angle = 2 * pi / puntos_n
     radius = 100
-    # point_on_circle(angle)
-    # print(angle)
-    # print(cos(angle))
-    # Create Points and
     for i in range(puntos_n):
         x = center[0] + (radius * round(cos(angle * i), 2))
         y = center[1] + (radius * round(sin(angle * i), 2))
@@ -64,12 +58,11 @@ class Create_polygon(APIView):
                 point_y=point_array[i][1],
             )
 
-        print(point_array, distance, my_id)
-        # diccionario = "Correcto"
         diccionario = {"id": my_id, "distance": distance, "Points": point_array}
         return Response(diccionario)
 
 
+# Return a List of all the Polygons in the database
 class List_polygon(APIView):
     authentication_classes = [authentication.TokenAuthentication]
     permission_classes = [permissions.IsAuthenticated]
@@ -85,7 +78,6 @@ class List_polygon(APIView):
             myPoints = Points.objects.filter(poligon_id=myPolygon)
             if len(myPoints) > 0:
                 for i in range(number_points):
-                    print(myPoints[i].point_x, myPoints[i].point_y)
                     point_array.append([myPoints[i].point_x, myPoints[i].point_y])
             else:
                 point_array = []
@@ -102,6 +94,7 @@ class List_polygon(APIView):
         return Response(lista)
 
 
+# Return the Polygon from the id
 class Find_polygon(APIView):
     authentication_classes = [authentication.TokenAuthentication]
     permission_classes = [permissions.IsAuthenticated]
@@ -111,12 +104,8 @@ class Find_polygon(APIView):
         myPolygon = Poligon.objects.get(id=id)
         number_points = myPolygon.number_points
         myPoints = Points.objects.filter(poligon_id=id)
-        print(myPolygon)
-        print(number_points)
-        print(myPoints)
         point_array = []
         for i in range(number_points):
-            print(myPoints[i].point_x, myPoints[i].point_y)
             point_array.append([myPoints[i].point_x, myPoints[i].point_y])
 
         diccionario = {
@@ -127,6 +116,26 @@ class Find_polygon(APIView):
         return Response(diccionario)
 
 
+# Verify if a point is within the Polygon
 class Verify_point(APIView):
-    pass
-    # Create
+    authentication_classes = [authentication.TokenAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        from shapely.geometry import Point, Polygon
+
+        id = request.data.get("id")
+        x = request.data.get("x")
+        y = request.data.get("y")
+        myPolygon = Poligon.objects.get(id=id)
+        number_points = myPolygon.number_points
+        myPoints = Points.objects.filter(poligon_id=id)
+        point_array = []
+        for i in range(number_points):
+            point_array.append((myPoints[i].point_x, myPoints[i].point_y))
+        # Create Point objects
+        p1 = Point(float(x), float(y))
+        # Create a Polygon
+        poly = Polygon(point_array)
+        diccionario = {"id": id, "Dentro de Polígono": p1.within(poly)}
+        return Response(diccionario)
