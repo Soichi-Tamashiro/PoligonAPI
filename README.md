@@ -43,7 +43,7 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
 
     <b>POSTMAN Code</b>
 
-    ![imagen](https://user-images.githubusercontent.com/38510593/116279164-d6ead780-a74c-11eb-9993-c835c2370c99.png)
+    ![image](https://user-images.githubusercontent.com/26827763/128677001-12c0ee15-3978-4bef-b484-fa932665318e.png)
 
   - <b><a id="Polygon-list">Listar Polígonos (GET)</a></b>
     [(back)](#Polygon-urls-end)
@@ -59,7 +59,7 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
 
     <b>POSTMAN Code</b>
 
-    ![imagen](https://user-images.githubusercontent.com/38510593/116279439-26c99e80-a74d-11eb-84ad-e92e14f786c4.png)
+    ![image](https://user-images.githubusercontent.com/26827763/128677098-b40ab564-7be7-4b5c-a3c5-74c18422871d.png)
 
   - <b><a id="Polygon-find">Encontrar Polígono (POST)</a></b>
     [(back)](#Polygon-urls-end)
@@ -76,8 +76,8 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
 
     <b>POSTMAN Code</b>
 
-    ![imagen](https://user-images.githubusercontent.com/38510593/116279644-65f7ef80-a74d-11eb-8f06-65ba3f363897.png)
-
+    ![image](https://user-images.githubusercontent.com/26827763/128677158-2d019d18-bfce-4de7-a1fe-5cd65a1dec63.png)
+    
   - <b><a id="Polygon-verify">Verificar Punto (POST)</a></b>
     [(back)](#Polygon-urls-end)
 
@@ -95,7 +95,8 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
 
     <b>POSTMAN Code</b>
 
-    ![imagen](https://user-images.githubusercontent.com/38510593/116280870-bf145300-a74e-11eb-9346-268db837a085.png)
+    ![image](https://user-images.githubusercontent.com/26827763/128677210-abf647d4-9219-4752-89a9-de8e694ff7af.png)
+
 
 ## [Autors](#Contents)
 
