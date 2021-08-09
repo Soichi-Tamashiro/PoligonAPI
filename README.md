@@ -29,7 +29,10 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
 - <b>Examples</b>
 
   - <b><a>Header and Token</a></b>
-
+    [(back)](#Polygon-urls-end)
+    
+    Token para poder realizar los pedidos a la API
+    
     <b>Token</b>
 
     ```
@@ -37,7 +40,9 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
     ```
 
     <b>POSTMAN Code</b>
-
+    
+    ![image](https://user-images.githubusercontent.com/26827763/128678366-1b838804-f070-4b5c-b468-b64dace63d71.png)
+    
   - <b><a id="Polygon-add">Generar Polígono (POST)</a></b>
     [(back)](#Polygon-urls-end)
 
