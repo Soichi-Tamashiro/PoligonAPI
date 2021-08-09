@@ -6,12 +6,131 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
 
 ## Contents
 
+- [Despliegue](#Despliegue)
+
+  - [Requerimientos](#Requerimientos)
+  - [Django](#Django)
+
 - [Usage](#Usage)
 
   - [EndPoints Api](#EndPoints-Api)
 
-- [Autor](#Autor)
+- [Autors](#Autors)
 - [License](#License)
+
+## [Despliegue](#Contents)
+
+## [Requerimientos](#Contents)
+
+- <b>Paso 1 actualizar Amazon Linux 2 (EC2 Instance)</b>
+
+  ```
+  yum update -y
+  ```
+
+- <b>Paso 2 Instalar el repositorio Epel y descargar PIP</b>
+
+  ```
+  sudo amazon-linux-extras install epel -y
+  ```
+
+- <b>Paso 3 Instalar Django usando PIP</b>
+
+  Instalar PIP
+
+  ```
+  sudo yum install python3-pip -y
+  ```
+
+  Instalar Django
+
+  ```
+  pip3 install django
+  ```
+
+- <b>Paso 4 Instalar Virtualenv y activar</b>
+
+  Instalar virtualenv
+
+  ```
+  sudo pip3 install virtualenv
+  ```
+
+  crear virtualenv
+
+  ```
+  virtualenv djangoenv
+  ```
+
+  activar virtualenv
+
+  ```
+  source ~/djangoenv/bin/activate
+  ```
+
+- <b>Paso 5 Instalar Django dentro de virtualenv</b>
+
+  ```
+  pip3 install – -upgrade Django
+  ```
+
+- <b>Paso 7 Instalar sqlite3</b>
+
+  ```
+  sudo yum install libsqlite3-dev
+  ```
+
+  fix sqlite3 error
+
+  ```
+  export LD_LIBRARY_PATH="/usr/local/lib/"
+  ```
+
+- <b>Paso 8 Instalar DjangoRestframework</b>
+
+  ```
+  pip3 install django djangorestframework django-cors-headers gunicorn
+  ```
+
+- <b>Paso 9 Instalar shapely</b>
+
+  ```
+  pip3 install shapely
+  ```
+
+- <b>Paso 10 Instalar git</b>
+
+  ```
+  sudo yum install git -y
+  ```
+
+- <b>Paso 11 Clonar repositorio</b>
+
+  ```
+  git clone https://github.com/Soichi-Tamashiro/PoligonAPI.git
+  ```
+
+## [Requerimientos](#Contents)
+
+- <b>Paso 1 Actualizar ALLOWED_HOST en settings.py agregar la IP publica de la instancia</b>
+
+  ```
+  ALLOWED_HOSTS = [
+    "18.219.166.96",
+    "127.0.0.1",
+  ]
+  ```
+
+- <b>Paso 2 agregar una regla inbound para el puerto 8000</b>
+
+- <b>Paso 1 Actualizar ALLOWED_HOST en settings.py</b>
+
+  ```
+  ALLOWED_HOSTS = [
+    "18.219.166.96",
+    "127.0.0.1",
+  ]
+  ```
 
 ## [Usage](#Contents)
 
@@ -30,9 +149,9 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
 
   - <b><a>Header and Token</a></b>
     [(back)](#Polygon-urls-end)
-    
+
     Token para poder realizar los pedidos a la API
-    
+
     <b>Token</b>
 
     ```
@@ -40,9 +159,9 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
     ```
 
     <b>POSTMAN Code</b>
-    
+
     ![image](https://user-images.githubusercontent.com/26827763/128678366-1b838804-f070-4b5c-b468-b64dace63d71.png)
-    
+
   - <b><a id="Polygon-add">Generar Polígono (POST)</a></b>
     [(back)](#Polygon-urls-end)
 
