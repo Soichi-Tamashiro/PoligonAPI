@@ -20,6 +20,8 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
 
 ## [Despliegue](#Contents)
 
+Luego de inicar la instancia en EC2 y conectarnos por medio de ssh
+
 ## [Requerimientos](#Contents)
 
 - <b>Paso 1 actualizar Amazon Linux 2 (EC2 Instance)</b>
@@ -110,7 +112,7 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
   git clone https://github.com/Soichi-Tamashiro/PoligonAPI.git
   ```
 
-## [Requerimientos](#Contents)
+## [Django](#Contents)
 
 - <b>Paso 1 Actualizar ALLOWED_HOST en settings.py agregar la IP publica de la instancia</b>
 
@@ -125,13 +127,10 @@ Servidor REST en Django para Test de API para generar, listar, encontrar polígo
 
   ![image](https://user-images.githubusercontent.com/26827763/128682834-d45afdd5-b600-4f0d-8f30-c33b600355bd.png)
 
-- <b>Paso 1 Actualizar ALLOWED_HOST en settings.py</b>
+- <b>Paso 3 Correr Django Restframework</b>
 
   ```
-  ALLOWED_HOSTS = [
-    "18.219.166.96",
-    "127.0.0.1",
-  ]
+  python manage.py runserver 0.0.0.0:8000
   ```
 
 ## [Usage](#Contents)
