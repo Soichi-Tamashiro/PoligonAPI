@@ -1,7 +1,3 @@
-# PoligonAPI
-
-Test de API para generar Poligonos
-
 <h1 align="center">PoligonAPI</h1>
 
 ## ArrowIT REST Server
